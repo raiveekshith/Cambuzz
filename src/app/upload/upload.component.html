@@ -1,0 +1,23 @@
+<form >
+  <div fxLayout="column" >
+  
+      <input mdInput  type="text" disabled [(ngModel)]="user.displayName"
+             placeholder="Clicked by" name="clickedBy" hidden>
+  
+             <button md-mini-fab type="button" onclick="document.getElementById('uploadImage').click()">
+              <label for="fileToUpload"><mat-icon>add</mat-icon></label>
+            </button>
+   <input type="file" id="uploadImage"   required name="uploadImage"  accept="image/*" style="display:none;">
+   <mat-form-field class="example-full-width">
+    <input matInput  [(ngModel)]="image.caption" required placeholder="Caption" name="caption"  >
+  </mat-form-field>
+  
+    
+  </div>
+  <div mat-dialog-actions >
+    <button  (click)="uploadFile()" class="mat-icon-button" ><mat-icon  aria-label="label">save</mat-icon> </button>
+    
+    <button class="mat-icon-button" (click)="cancelUpload()"><mat-icon  aria-label="label">clear</mat-icon></button>
+    
+  </div>
+    

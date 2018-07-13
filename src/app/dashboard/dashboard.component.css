@@ -1,0 +1,18 @@
+app-navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .upload-button{
+    position: fixed;
+    top:90%;
+    right:1%;
+    background-color: #31708f;
+    color: white;
+}
+.loadingSpinner{
+  position: fixed;
+  top: 50%;
+  right: 45%;
+}

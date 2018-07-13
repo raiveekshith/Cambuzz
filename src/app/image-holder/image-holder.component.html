@@ -1,0 +1,27 @@
+<mat-card class="mat-whiteframe-10dp">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"><img [src]="image.clickedBy.photoUrl" class="avatar"></div>
+    <mat-card-title>{{image.clickedBy.displayName?image.clickedBy.displayName:image.clickedBy}}</mat-card-title>
+    <mat-card-subtitle>{{image.caption}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image class="card-image" src="{{image.url}}" [alt]="image.caption">
+  <mat-card-content>
+    <p>
+        {{image.details}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button (click)="favorite()" ><mat-icon [ngClass]="{red:image.favorite}">favorite</mat-icon><span>{{image.favorite}}</span></button>
+     <mat-menu #shareMenu="matMenu" xPosition="before" yPosition="above">
+         <a  mat-menu-item [href]="image.url" download class="downloadLink">
+            Download
+           </a> 
+         <button mat-menu-item disabled> Facebook </button>
+         <button mat-menu-item > Delete </button>
+      </mat-menu>
+      <button mat-icon-button  style="float:right" [matMenuTriggerFor]="shareMenu">
+         <mat-icon>more_vert</mat-icon>
+      </button>
+  </mat-card-actions>
+</mat-card>  
+  

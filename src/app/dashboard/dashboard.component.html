@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <!-- <block-ui [template]="blockTemplate"></block-ui> -->
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start">
+    <div fxFlex="33"> 
+    </div>
+        <div class="flex-container" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign.xs="start"  id="imageScrollDiv">
+    <div  *ngIf="imageLoading&&tempImage" class="loadingSpinner"> 
+        <mat-spinner></mat-spinner>
+        <p><strong>Loading Images</strong>
+             </p>
+    </div>
+    <div  *ngFor="let image of imageList| async" >
+       
+        <div fxFlex > 
+              <app-image-holder [image]="image"  ></app-image-holder>
+        </div>
+       <!-- <mat-breakit></mat-breakit> -->
+    </div>
+    
+    </div>
+    <div fxFlex="33">
+        <button  mat-fab (click)="uploadForm()" id="ulbtn" class="upload-button"><mat-icon>add</mat-icon></button>
+    </div>
+    </div>
+    
+    </div>
+    
